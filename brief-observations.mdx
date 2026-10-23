@@ -1,0 +1,27 @@
+---
+title: Observations on building with Thally
+description: What worked well, where I encountered friction, and what I would improve after publishing a documentation site with Thally Cloud.
+---
+
+# Observations on building with Thally
+
+## What worked well
+
+- **Publishing needed no local setup.** The Cloud flow created the GitHub repository, ran the first deployment, and gave me a live `thally.app` address without installing Node.js or cloning anything.
+- **The content model is simple.** Pages are MDX files in `src/content`, and `docs.json` controls the sidebar, so adding the quickstart and guide meant creating files and listing them in navigation.
+- **The pre-push check was reassuring.** Running `check` and `build` locally caught problems such as broken links or navigation entries pointing at missing pages before they reached production.
+- **Every push redeployed automatically.** Every push to the production branch redeployed automatically, and the deployment history tied each release to a commit, which made it easy to confirm my change was live.
+
+## Where I encountered friction
+
+- **The GitHub App permissions.** The recommended fresh-repository path requires "All repositories" access, which is a broad grant. Teams with stricter policies have to use an existing Thally repository instead, and that tradeoff only becomes clear in the docs, not in the sign-in flow.
+- **Plan limits.** The one-time 7-day trial and the managed-site capacity limit are explained in linked pages, so I had to read beyond the quickstart before publishing to avoid surprises.
+- **Learning the config files.** `docs.json` and `src/data/site.ts` are the main control surfaces, but the quickstart only describes them in a table, so I had to inspect the generated starter to see the structure.
+- **Two setup paths.** Two setup paths (Cloud and CLI) plus a long agent prompt at the top of the quickstart made it harder to see the shortest route as a first-time reader.
+
+## What I'd improve
+
+- **Explain the permission in context.** Explain inside the setup wizard why "All repositories" is needed and what the alternative is, at the moment the permission is requested.
+- **Add an annotated `docs.json` example.** Add a minimal, annotated `docs.json` example directly in the quickstart so new users can add a page and a sidebar group on the first try.
+- **Surface limits before publishing.** Put the trial and capacity notes in a short callout before "Publish site" instead of behind a link.
+- **Offer a preview step.** Offer a preview step or pull-request preview in the quickstart so users can review the first edit before it goes to production.
