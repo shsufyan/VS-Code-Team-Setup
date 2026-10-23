@@ -1,0 +1,23 @@
+---
+title: Introduction
+description: A short, task-focused guide to setting up Visual Studio Code for yourself and your team.
+---
+
+# VS Code Team Setup
+
+Visual Studio Code is a free, extensible code editor. This unofficial guide
+helps you get productive quickly and keep your whole team's setup consistent.
+
+## Who this is for
+
+- Developers installing VS Code for the first time
+- Tech leads who want shared formatting, extensions, and debugging settings
+- Technical writers and DevOps engineers who edit code and docs in the same tool
+
+## Where to start
+
+1. [Quickstart](/quickstart): install VS Code, open a project, run and debug a file
+2. [Share a team setup](/guides/share-team-setup): commit settings and extension
+   recommendations so everyone gets the same environment
+
+For the full reference, see the official VS Code documentation.
